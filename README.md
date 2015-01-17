@@ -1,6 +1,6 @@
 # grunt-bootstrap-prefix
 
-> when somebody need to custom bootstrap deeply,this plugin can help them add custom prefix with some key class in bootstrap to avoid possible conflict
+> when somebody need to custom bootstrap deeply,this plugin can help them add custom prefix with some key class in less files to avoid possible conflict
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`

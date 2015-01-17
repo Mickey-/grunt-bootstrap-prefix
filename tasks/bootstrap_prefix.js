@@ -8,43 +8,29 @@
 
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('bootstrap_prefix', 'when somebody need to custom bootstrap deeply,this plugin can help them add custom prefix with some key class in bootstrap to avoid possible conflict', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
+  g.registerMultiTask('bootstrap_prefix', 'when somebody need to custom bootstrap deeply,this plugin can help them add custom prefix with some key class in less files to avoid possible conflict', function() {
+
+    require('colors');
+    var done = this.async();
+
     var options = this.options({
-      punctuation: '.',
-      separator: ', '
+      // 关键：Gruntfile中可配置的参数
+      // .code .pre .typeahead在bootstrap3中删除。新增很多
+      keyClass: ['alert', 'badge', 'breadcrumb', 'btn', 'btn-group', 'btn-toolbar', 'dropdown', 'dropdown-menu', 'dropup', 'icon', 'carousel', 'close', 'form', 'row-fluid', 'tag', 'label', 'container', 'container-fluid', 'row', 'modal', 'modal-backdrop', 'navbar', 'nav', 'pagination', 'progress', 'steps', 'table', 'tooltip', 'lead', 'page-header', 'well', 'input-groupa', 'list-group', 'jumbotron', 'media', 'panel', 'thumbnail']
     });
 
-    // Iterate over all specified file groups.
     this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+      var buffer = g.file.read(f)
+        , classReg = new RegExp('\\.(' + options.keyClass.join('|') + ')(?![-\\w])', 'g')
+      buffer = buffer.replace(classReg, '.sui-$1');
+      console.log(buffer);
+    })
 
-      // Handle options.
-      src += options.punctuation;
-
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
-
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
-    });
   });
 
 };
