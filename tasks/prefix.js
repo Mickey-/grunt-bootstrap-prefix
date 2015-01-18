@@ -16,8 +16,7 @@ module.exports = function(g) {
   g.registerMultiTask('prefix', 'when somebody need to custom bootstrap deeply,this plugin can help them add custom prefix with some key class in less files to avoid possible conflict', function() {
 
     require('colors');
-    var done = this.async()
-      ,result = true
+    var result = true
       ,opt = this.options({
         prefix: 'sui-'
       })
@@ -39,7 +38,7 @@ module.exports = function(g) {
         result = false;
       }
     })
-    result ? gruntIns.ok('all done') : gruntIns.error('some files error');
+    result ? gruntIns.ok() : gruntIns.error('some files error');
     function writeError (msg) {
       return g.log.error(msg || '文件写入失败！');
     };
