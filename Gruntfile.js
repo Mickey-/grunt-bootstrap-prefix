@@ -30,21 +30,16 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     bootstrap_prefix: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+      options: {
+        keyClass: []
+        ,prefix: 'sui-'
       },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+      sui: {
+        expand: true,
+        cwd: './',
+        src: ['./*.less'],
+        dest: './',
+        ext: '.less'
       }
     },
 
