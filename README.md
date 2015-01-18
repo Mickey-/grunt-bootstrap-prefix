@@ -17,14 +17,14 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('prefix-cssclass');
 ```
 
-## The "bootstrap_prefix" task
+## The "prefix" task
 
 ### Overview
-In your project's Gruntfile, add a section named `bootstrap_prefix` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `prefix` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  bootstrap_prefix: {
+  prefix: {
     options: {
       // Task-specific options go here.
     },
@@ -56,7 +56,7 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  bootstrap_prefix: {
+  prefix: {
     options: {},
     files: {
       'dest/default_options': ['src/testing', 'src/123'],
@@ -70,7 +70,7 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  bootstrap_prefix: {
+  prefix: {
     options: {
       separator: ': ',
       punctuation: ' !!!',
