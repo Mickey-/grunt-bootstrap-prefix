@@ -26,16 +26,16 @@ module.exports = function(g) {
       , defaultKeyClass = ['alert', 'badge', 'breadcrumb', 'btn', 'btn-group', 'btn-toolbar', 'dropdown', 'dropdown-menu', 'dropup', 'icon', 'carousel', 'close', 'form', 'row-fluid', 'tag', 'label', 'container', 'container-fluid', 'row', 'modal', 'modal-backdrop', 'navbar', 'nav', 'pagination', 'progress', 'steps', 'table', 'tooltip', 'lead', 'page-header', 'well', 'input-groupa', 'list-group', 'jumbotron', 'media', 'panel', 'thumbnail']
       , customKeyClass = opt.keyClass
       , keyClass = (g.util.kindOf(customKeyClass) == 'array' && customKeyClass.length) ? customKeyClass : defaultKeyClass
-      , gruntIns = g.log.write(opt.prefix + '前缀分析注入开始...\n');
+      , gruntIns = g.log.write(opt.prefix.cyan + '前缀分析注入开始...\n');
     this.files.forEach(function(f) {
       var buffer = g.file.read(f.src)
         , classReg = new RegExp('\\.(' + keyClass.join('|') + ')(?![-\\w])', 'g')
         , write = g.file.write;
       // 添加前缀
       if (write(f.dest, buffer.replace(classReg, '.' + opt.prefix + '$1'))) {
-        g.log.ok(f.src[0] + ':' + opt.prefix +  '前缀注入完成！');
+        g.log.ok(f.src[0] + ':' + opt.prefix.green +  '前缀注入完成！');
       } else {
-        writeError(f.src[0] + ':' + opt.prefix +  '前缀注入失败！');
+        writeError(f.src[0] + ':' + opt.prefix.red +  '前缀注入失败！');
         result = false;
       }
     })
