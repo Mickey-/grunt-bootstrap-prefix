@@ -1,6 +1,6 @@
 /*
- * grunt-bootstrap-prefix
- * https://github.com/Mickey-/grunt-bootstrap-prefix
+ * prefix-cssclass
+ * https://github.com/Mickey-/prefix-cssclass
  *
  * Copyright (c) 2015 Mickey-
  * Licensed under the MIT license.

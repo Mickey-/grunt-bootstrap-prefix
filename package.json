@@ -1,8 +1,8 @@
 {
-  "name": "grunt-bootstrap-prefix",
+  "name": "prefix-cssclass",
   "description": "when somebody need to custom bootstrap deeply,this plugin can help them add custom prefix with some key class in bootstrap to avoid possible conflict",
   "version": "0.1.0",
-  "homepage": "https://github.com/Mickey-/grunt-bootstrap-prefix",
+  "homepage": "https://github.com/Mickey-/prefix-cssclass",
   "author": {
     "name": "Mickey-",
     "email": "itaofe@gmail.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mickey-/grunt-bootstrap-prefix.git"
+    "url": "https://github.com/Mickey-/prefix-cssclass.git"
   },
   "bugs": {
-    "url": "https://github.com/Mickey-/grunt-bootstrap-prefix/issues"
+    "url": "https://github.com/Mickey-/prefix-cssclass/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/Mickey-/grunt-bootstrap-prefix/blob/master/LICENSE-MIT"
+      "url": "https://github.com/Mickey-/prefix-cssclass/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
