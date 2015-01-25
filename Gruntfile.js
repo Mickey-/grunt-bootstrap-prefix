@@ -36,10 +36,10 @@ module.exports = function(grunt) {
       },
       sui: {
         expand: true,
-        cwd: 'less/',
-        src: ['./*.less'],
-        dest: 'less/',
-        ext: '.less'
+        cwd: 'dist/',
+        src: ['./**/*.css'],
+        dest: 'dist/'
+        //ext: '.less'
       }
     },
 

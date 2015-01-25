@@ -1,7 +1,7 @@
 {
   "name": "prefix-cssclass",
   "description": "when somebody need to custom bootstrap deeply,this plugin can help them add custom prefix with some key class in bootstrap to avoid possible conflict",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "homepage": "https://github.com/Mickey-/prefix-cssclass",
   "author": {
     "name": "Mickey-",
